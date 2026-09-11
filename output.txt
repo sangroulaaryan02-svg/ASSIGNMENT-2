@@ -1,0 +1,34 @@
+Input: 38 + 75
+Tree: (+ 38 75)
+Tokens: [NUM:38] [OP:+] [NUM:75] [END]
+Result: 113
+
+Input: 42 + 39 * 42
+Tree: (+ 42 (* 39 42))
+Tokens: [NUM:42] [OP:+] [NUM:39] [OP:*] [NUM:42] [END]
+Result: 1680
+
+Input: -(31 + 44)
+Tree: (neg (+ 31 44))
+Tokens: [OP:-] [LPAREN:(] [NUM:31] [OP:+] [NUM:44] [RPAREN:)] [END]
+Result: -75
+
+Input: --578
+Tree: (neg (neg 578))
+Tokens: [OP:-] [OP:-] [NUM:578] [END]
+Result: 578
+
+Input: (104 - 20) * 30 + -44 / 25
+Tree: (+ (* (- 104 20) 30) (/ (neg 44) 25))
+Tokens: [LPAREN:(] [NUM:104] [OP:-] [NUM:20] [RPAREN:)] [OP:*] [NUM:30] [OP:+] [OP:-] [NUM:44] [OP:/] [NUM:25] [END]
+Result: 2518.24
+
+Input: 32 @ 52
+Tree: ERROR
+Tokens: ERROR
+Result: ERROR
+
+Input: 145 / 08
+Tree: (/ 145 8)
+Tokens: [NUM:145] [OP:/] [NUM:08] [END]
+Result: 18.125
